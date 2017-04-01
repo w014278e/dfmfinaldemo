@@ -33,7 +33,7 @@
       <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <style type="text/css">
     .programmeHead {
 	font-weight: bold;
@@ -146,17 +146,15 @@
 
 
   <!-- JS Files  -->
-  <script src="./js/serviceWorker.js"></script>
-
-  <!-- My Google Analytics Report -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-92627241-1', 'auto');
-    ga('send', 'pageview');
-  </script>
+  <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/serviceWorker.js").then(function(registration) {
+        console.log("Service worker enabled");
+    }).catch(function(error) {
+        console.log("Service worker not enabled", error);
+    })
+}
+      </script>
+<script src="serviceWorker.js"></script>
   </body>
 </html>

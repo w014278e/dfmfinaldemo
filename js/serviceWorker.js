@@ -5,7 +5,7 @@ self.addEventListener("install", Function(event) {
                       caches.open(cacheName).then(function(cache) {
     return cache.addAll([
         "/index.html",
-        "/css/styles.css"
+        "/styles.css"
     ]);
 })
 )
@@ -20,10 +20,3 @@ self.addEventListener("fetch", Function(event) {
 });
 
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/js/serviceWorker.js").then(function(registration) {
-        console.log("Serive worker enabled");
-    }).catch(function(error) {
-        console.log("Service worker not enabled", error);
-    })
-}
