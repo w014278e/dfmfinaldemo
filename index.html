@@ -148,13 +148,13 @@
   <!-- JS Files  -->
   <script type="text/javascript">
       if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/serviceWorker.js").then(function(registration) {
+    navigator.serviceWorker.register("serviceWorker.js").then(function(registration) {
         console.log("Service worker enabled");
     }).catch(function(error) {
         console.log("Service worker not enabled", error);
     })
 }
       </script>
-<script src="/serviceWorker.js"></script>
+<script src="serviceWorker.js"></script>
   </body>
 </html>
